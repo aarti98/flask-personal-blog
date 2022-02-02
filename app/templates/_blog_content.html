@@ -1,0 +1,12 @@
+<table class="table table-hover">
+    <tr valign="top">
+        <td>
+            <span style="color: #5a343a">
+                {{ blog.title }} 
+            </span>
+                <span style=" font-size: 10px;">
+                    {{ moment(blog.timestamp).fromNow() }}
+                </span>:<br>
+            {{ blog.content }}</td>
+    </tr>
+</table>

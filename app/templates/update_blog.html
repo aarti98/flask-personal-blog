@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+<h3>Update Blog</h3>
+<form action="" method="POST" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.title.label }}<br>
+        {{ form.title(size=50) }}<br>
+        {% for error in form.bodyerrors %}
+            <span style="color: orangered;"> {{ error }} </span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.content.label }}<br>
+        {{ form.content() }}<br>
+        {% for error in form.content.errors %}
+            <span style="color: orangered;"> {{ error }} </span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.update() }}
+    </p>
+
+
+</form>
+{% endblock %}
