@@ -1,0 +1,38 @@
+<div class="row updates">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
+                <h4>{{ blog.title }}</h4>
+            </div>                    
+            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+                <p class="article-date"> <span class="" data-timestamp="{{ blog.timestamp }}" data-function="format" data-format="ll" data-refresh="0" >{{ moment(blog.timestamp).format('LL') }}</span> </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-12 col-xl-12">
+                <p>
+                    </p><p>{{ blog.description }}</p>
+
+                <p></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 col-xl-10">
+                <p><a href=" {{ url_for('home.view_blog', pk=blog.id) }} ">Learn More</a></p>  
+            </div>                    
+            <!-- <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2 col-xl-2">
+                <p># of comments</p>
+            </div> -->
+        </div>
+
+        <div>
+            <div class="btn">
+                <a href="{{ url_for('admin.admin_update_blog', pk=blog.id) }}">Edit Blog</a>
+            </div>
+    
+            <div class="btn">
+                <a href="{{ url_for('admin.admin_delete_blog', pk=blog.id) }}">Delete Blog</a>
+            </div>
+        </div>
+    </div>
+</div>

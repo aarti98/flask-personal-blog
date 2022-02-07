@@ -13,6 +13,13 @@
         {% endfor %}
     </p>
     <p>
+        {{ form.description.label }}<br>
+        {{ form.description(size=30) }}<br>
+        {% for error in form.bodyerrors %}
+            <span style="color: orangered;"> {{ error }} </span>
+        {% endfor %}
+    </p>
+    <p>
         {{ form.content.label }}<br>
         {{ form.content() }}<br>
         {% for error in form.content.errors %}

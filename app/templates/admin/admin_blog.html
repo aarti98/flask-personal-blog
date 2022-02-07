@@ -11,15 +11,7 @@
         </div>
     </div>
     <br>
-    <div>
-        <div class="btn">
-            <a href="{{ url_for('update_blog', pk=blog.id) }}">Edit Blog</a>
-        </div>
 
-        <div class="btn">
-            <a href="{{ url_for('delete_blog', pk=blog.id) }}">Delete Blog</a>
-        </div>
-    </div>
-
+    {% include '_admin_manage_blog.html' %}
 </div>
  {% endblock %}

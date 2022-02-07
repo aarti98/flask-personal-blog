@@ -1,0 +1,39 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+<div class="container">
+
+        
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h1 class="code-line text-center" data-line-start="14" data-line-end="15">Add Blog</h1>             
+            <br>
+        </div>
+    </div>
+<form action="" method="POST" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.title.label }}<br>
+        {{ form.title(size=30) }}<br>
+    </p>
+    <p>
+        {{ form.description.label }}<br>
+        {{ form.description(size=30) }}<br>
+    </p>
+    <p>
+        {{ form.content.label }}<br>
+        {{ form.content() }}<br>
+    </p>
+    <p>
+        {{ form.submit() }}
+    </p>
+
+
+</form>
+
+{{ ckeditor.load() }}
+{{ ckeditor.load_code_theme() }}
+{{ ckeditor.config(name='content') }}
+
+
+{% endblock %}
